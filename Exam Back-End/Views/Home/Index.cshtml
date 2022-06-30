@@ -1,0 +1,296 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="navbar-section">
+        <nav class="navbar bg-light">
+            <div class="container">
+                <div class="row w-100 justify-content-between align-items-center">
+                    <div class="logo d-flex align-items-center w-25 col-lg-4 col-sm-4 col-md-8 col-8 col-4">
+                        <a class="navbar-brand" href="#">
+                            <h2>My<span style="color:blueviolet">Biz</span></h2>
+                        </a>
+                    </div>
+                    <div class="services col-lg-8 ">
+                        <ul class="d-flex">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Services</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Portfolio</a></li>
+                            <li><a href="">Team</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="bars w-25 col-lg-8 col-md-8 col-sm-8 col-8 ">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                     aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section id="slider-section">
+        <div class="sliderItem">
+            @{
+                int count = 0;
+
+                foreach (Slider slider in Model.Sliders)
+                {
+                    count++;
+                    string activity = "";
+                    if (count == 1)
+                    {
+                        activity = "sliders d-flex align-items-center activeSlider";
+                    }
+                    else
+                    {
+                        activity = "sliders d-flex align-items-center";
+                    }
+
+                    <div class="@activity" style="background-image: url(assets/Image/Slider/@slider.Image)">
+                        <div class="marks">
+                            <i class="fa-solid fa-left-long left"></i>
+                            <i class="fa-solid fa-right-long rayt"></i>
+                        </div>
+                        <div class="descrip text-center">
+                            <h4>@slider.Title</h4>
+                            <p>
+                                @slider.SubTitle
+                            </p>
+                            <a href="" class="btn btn-danger">Read More</a>
+                        </div>
+                    </div>
+                }
+            }
+
+
+        </div>
+    </section>
+    <secti id="card-section">
+        <div class="container">
+            <h3 class="text-center">SERVICES</h3>
+            <p class="text-center">Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="descrption d-flex">
+                        <div class="for-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="texts ms-3">
+                            <strong>Lorem Ipsum</strong>
+                            <p>
+                                Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                occaecati cupiditate non provident
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="descrption d-flex">
+                        <div class="for-icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <div class="texts ms-3">
+                            <strong>Sed ut perspiciatis</strong>
+                            <p>
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="descrption d-flex">
+                        <div class="for-icon">
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+                        <div class="texts ms-3">
+                            <strong>Magni Dolore</strong>
+                            <p>
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="descrption d-flex">
+                        <div class="for-icon">
+                            <i class="fa-solid fa-binoculars"></i>
+                        </div>
+                        <div class="texts ms-3">
+                            <strong>Dolor Sitema</strong>
+                            <p>
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                voluptatum deleniti atque
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="descrption d-flex">
+                        <div class="for-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="texts ms-3">
+                            <strong>Nemo Enim</strong>
+                            <p>
+                                Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat tarad limino ata
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="descrption d-flex">
+                        <div class="for-icon">
+                            <i class="fa-solid fa-chart-bar"></i>
+                        </div>
+                        <div class="texts ms-3">
+                            <strong>Eiusmod Tempor</strong>
+                            <p>
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laborum
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section id="team-section" class="py-5">
+            <div class="container">
+
+                <div class="row">
+                    <h3 class="text-center">Team</h3>
+                    <p class="text-center">Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+
+                    @foreach (Team team in Model.Teams)
+                    {
+                        <div class="col-lg-6">
+                            <div class="team-info d-flex justify-content-around py-3">
+                                <div class="image">
+                                    <img src="/assets/Image/Clients/@team.Image" alt="">
+                                </div>
+                                <div class="about w-50">
+                                    <strong>@team.FullName</strong> <br>
+                                    <small>@team.Proffession</small>
+
+                                    <div class="line-team"></div>
+                                    <p>@team.About</p>
+                                    <div class="social-medias">
+                                        <ul class="d-flex">
+                                            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                                            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                                            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li><a href=""><i class="fa-brands fa-invision"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+        <section id="contact-section" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <h3 class="text-center">SERVICES</h3>
+                    <p class="text-center">Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
+                    <div class="col-lg-12 address row">
+                        <div class="col-lg-4 d-flex">
+                            <div class="contact-icon d-flex justify-content-center">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="for-texts">
+                                <h3>Location:</h3>
+                                <small>
+                                    A108 Adam Street
+                                    New York, NY 535022
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex">
+                            <div class="contact-icon d-flex justify-content-center">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="for-texts">
+                                <h3>Email:</h3>
+                                <small></small>info@example.com
+                                contact@example.com
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex">
+                            <div class="contact-icon d-flex justify-content-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="for-texts">
+                                <h3>Call:</h3>
+                                <small>
+                                    +1 5589 55488 51 <br>
+                                    +1 5589 22475 14
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 address sents">
+                        <div class="messages">
+                            <div class="flexible d-flex">
+                                <form action="" class="d-flex justify-content-between">
+                                    <input type="text" placeholder="Your Name" class="">
+                                    <input type="text" placeholder="Your Email">
+                                </form>
+                            </div>
+                            <input type="text" class="subject" placeholder="Subject"> <br>
+                            <textarea name="" id="" cols="30" rows="6" placeholder="Message"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Send Message</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+</main>
+
